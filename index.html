@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seu Nome | Desenvolvimento de sites e sistemas</title>
+<meta name="description" content="Desenvolvo sites, lojas online e sistemas sob medida para pequenos negócios.">
+<style>
+:root{--bg:#F1F5F4;--surface:#fff;--ink:#0E2A2A;--muted:#4B6363;--accent:#0A7C6E;--accent-ink:#fff;--line:#D3DEDC;--code:#0E2A2A;--code-ink:#DCEFEA;--hl:#F2B705;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1615;--surface:#132321;--ink:#E6F2F0;--muted:#9DB5B1;--accent:#3FD1BC;--accent-ink:#06211D;--line:#24403C;--code:#081210;--code-ink:#DCEFEA}}
+:root[data-theme="dark"]{--bg:#0C1615;--surface:#132321;--ink:#E6F2F0;--muted:#9DB5B1;--accent:#3FD1BC;--accent-ink:#06211D;--line:#24403C;--code:#081210;--code-ink:#DCEFEA}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;line-height:1.15;margin:0;font-weight:700}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.brand{font-family:Georgia,serif;font-weight:700;font-size:1.25rem;text-decoration:none}
+nav a{margin-left:22px;text-decoration:none;color:var(--muted);font-size:.95rem}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:56px 0 88px}
+.hero h1{font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:-.01em}
+.hero p{color:var(--muted);max-width:52ch;margin:20px 0 32px;font-size:1.1rem}
+.btn{display:inline-block;padding:13px 24px;border-radius:8px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--line);margin-left:10px}
+.btn:hover{filter:brightness(1.08)}
+.code{background:var(--code);color:var(--code-ink);border-radius:12px;padding:0;overflow:hidden;box-shadow:0 18px 40px -20px rgba(0,0,0,.45)}
+.code .bar{display:flex;gap:7px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.1)}
+.code .bar i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.25)}
+.code .bar i:first-child{background:var(--hl)}
+.code pre{margin:0;padding:20px;font:14px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-x:auto}
+.k{color:#7FE0CF}.s{color:#F2B705}.c{color:#7C9995}
+section{padding:72px 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(1.7rem,3.5vw,2.3rem);margin-bottom:12px}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 40px}
+.svc{display:grid;grid-template-columns:220px 1fr;gap:8px 40px;padding:24px 0;border-bottom:1px solid var(--line)}
+.svc:last-child{border-bottom:0}
+.svc h3{font-size:1.25rem}
+.svc p{margin:0;color:var(--muted)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.proj:first-child{grid-column:span 3;flex-direction:row;gap:32px;align-items:flex-start}
+.proj:first-child h3{font-size:1.6rem}
+.proj h3{font-size:1.2rem}
+.proj p{margin:0;color:var(--muted);font-size:.97rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.tags span{font-size:.8rem;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;counter-reset:s}
+.steps li{counter-increment:s;padding-top:16px;border-top:3px solid var(--accent)}
+.steps li::before{content:"Etapa " counter(s);display:block;font-size:.85rem;color:var(--muted);margin-bottom:4px}
+.steps h3{font-size:1.2rem;margin-bottom:6px}
+.steps p{margin:0;color:var(--muted);font-size:.97rem}
+.contact{text-align:left}
+.contact .btn{margin-top:8px}
+footer{padding:32px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:820px){
+.hero{grid-template-columns:1fr;padding:32px 0 56px}
+.svc{grid-template-columns:1fr}
+.projects,.steps{grid-template-columns:1fr}
+.proj:first-child{grid-column:auto;flex-direction:column;gap:12px}
+nav a{margin-left:14px}
+.btn.alt{margin:10px 0 0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<a class="brand" href="#">Seu Nome</a>
+<nav><a href="#servicos">Serviços</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a></nav>
+</header>
+
+<main>
+<div class="hero">
+<div>
+<h1>Sites e sistemas que funcionam desde o primeiro clique.</h1>
+<p>Sou desenvolvedor e ajudo pequenos negócios a vender mais, organizar o dia a dia e ser encontrados na internet. Você me conta o problema, eu entrego a solução pronta para usar.</p>
+<a class="btn" href="#contato">Pedir orçamento</a><a class="btn alt" href="#projetos">Ver projetos</a>
+</div>
+<div class="code" aria-hidden="true">
+<div class="bar"><i></i><i></i><i></i></div>
+<pre><span class="c">// seu pedido, em código</span>
+<span class="k">const</span> projeto = {
+  cliente: <span class="s">"seu negócio"</span>,
+  entrega: <span class="s">"no prazo combinado"</span>,
+  suporte: <span class="s">"depois do lançamento"</span>,
+  funciona: <span class="k">true</span>
+};</pre>
+</div>
+</div>
+</main>
+</div>
+
+<section id="servicos"><div class="wrap">
+<h2>O que eu faço</h2>
+<p class="lead">Trabalho com projetos pequenos e médios, do primeiro contato até o site no ar.</p>
+<div class="svc"><h3>Sites e páginas</h3><p>Site institucional ou página de vendas que carrega rápido, aparece bem no celular e é fácil de encontrar no Google.</p></div>
+<div class="svc"><h3>Lojas online</h3><p>Catálogo, carrinho e pagamento por Pix ou cartão, com painel simples para você cadastrar os produtos.</p></div>
+<div class="svc"><h3>Sistemas sob medida</h3><p>Controle de estoque, agenda, cadastro de clientes e relatórios feitos para o jeito que o seu negócio funciona.</p></div>
+<div class="svc"><h3>Automações e integrações</h3><p>Planilhas, WhatsApp, e-mail e pagamentos conversando entre si, para acabar com o trabalho repetitivo.</p></div>
+</div></section>
+
+<section id="projetos"><div class="wrap">
+<h2>Projetos</h2>
+<p class="lead">Alguns exemplos do tipo de trabalho que entrego.</p>
+<div class="projects">
+<article class="proj"><div><h3>Loja online para ateliê de cerâmica</h3><p>Catálogo com fotos, carrinho e cálculo de frete. A dona cadastra as peças sozinha, sem depender de ninguém.</p></div><div class="tags"><span>Loja virtual</span><span>Pix</span><span>Frete</span></div></article>
+<article class="proj"><h3>Controle de estoque</h3><p>Painel que avisa quando um produto está acabando e gera o relatório do mês.</p><div class="tags"><span>Sistema web</span><span>Relatórios</span></div></article>
+<article class="proj"><h3>Agenda para clínica</h3><p>Pacientes marcam horário pelo celular e recebem lembrete por mensagem.</p><div class="tags"><span>Agendamento</span><span>Lembretes</span></div></article>
+<article class="proj"><h3>Site de escritório de contabilidade</h3><p>Página institucional com formulário de contato que cai direto no e-mail.</p><div class="tags"><span>Site</span><span>SEO</span></div></article>
+</div>
+</div></section>
+
+<section id="processo"><div class="wrap">
+<h2>Como trabalho</h2>
+<p class="lead">Um processo curto, sem surpresa no prazo nem no valor.</p>
+<ol class="steps">
+<li><h3>Conversa</h3><p>Entendo o que você precisa e envio uma proposta com prazo e preço fechados.</p></li>
+<li><h3>Desenvolvimento</h3><p>Você acompanha o andamento e aprova cada parte antes de eu seguir.</p></li>
+<li><h3>Entrega e suporte</h3><p>Coloco no ar, ensino a usar e fico à disposição para ajustes.</p></li>
+</ol>
+</div></section>
+
+<section id="contato" class="contact"><div class="wrap">
+<h2>Vamos conversar sobre o seu projeto?</h2>
+<p class="lead">Conte em poucas linhas o que você precisa. Respondo em até um dia útil.</p>
+<a class="btn" href="https://wa.me/5511987184298?text=Ol%C3%A1!%20Vi%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+</div></section>
+
+<footer><div class="wrap">Seu Nome, desenvolvedor de sites e sistemas.</div></footer>
+</body>
+</html>
